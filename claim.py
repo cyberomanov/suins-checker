@@ -66,8 +66,6 @@ if __name__ == '__main__':
                                 suins_coin_obj = get_suins_obj(sui_config=sui_config)
                             else:
                                 break
-
-
             except Exception as e:
                 logger.exception(e)
 

@@ -100,13 +100,13 @@ word1 ... word12
 Запустите скрипт `checker.py` для запуска чекера:
 
 ```bash
-python3.10 main.py
+python3.10 checker.py
 ```
 
 Запустите скрипт `claim.py` для запуска клейма и отправки на биржу:
 
 ```bash
-python3.10 main.py
+python3.10 claim.py
 ```
 
 
