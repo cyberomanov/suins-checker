@@ -68,7 +68,6 @@ if __name__ == '__main__':
                                 break
             except Exception as e:
                 logger.exception(e)
-
     except KeyboardInterrupt:
         exit()
     except Exception as e:
