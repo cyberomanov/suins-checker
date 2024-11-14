@@ -3,6 +3,7 @@ import json
 import requests
 from loguru import logger
 
+from data.constants import SUINS_NFT_ADDRESS
 from datatypes.airdrop import ExplorerResponse
 from tools.change_ip import execute_change_ip
 from user_data.config import change_ip_url
@@ -23,7 +24,7 @@ def get_suins_airdrop_item(index: int, address: str, session: requests.Session()
                 "filter":
                     {"MatchAny":
                         [{
-                            "StructType": "0x220bca2187856d09aae578e2782b2b484049a32c755d20352e01236ba5368b63::distribution::NSWrapper"
+                            "StructType": SUINS_NFT_ADDRESS
                         }]},
                 "options":
                     {

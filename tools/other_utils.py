@@ -27,3 +27,7 @@ def get_proxied_session(proxy: str):
         }
     session.request = lambda *args, **kwargs: requests.Session.request(session, *args, timeout=60, **kwargs)
     return session
+
+
+def short_address(address: str) -> str:
+    return address[:6] + "..." + address[-4:]
