@@ -35,6 +35,7 @@ if __name__ == '__main__':
                     logger.info(
                         f'{index} | {short_address(address)} | suins_claim | {suins_balance.float} $NS on balance '
                         f'| {EXPLORER}/{result.digest}.')
+                    time.sleep(random.randint(3, 10))
                 else:
                     suins_balance = get_sui_balance(
                         sui_config=sui_config, coin_type=SUINS_COIN_TYPE, denomination=USDC_DENOMINATION
@@ -51,17 +52,20 @@ if __name__ == '__main__':
                                 result = transfer_suins_tx(
                                     sui_config=sui_config, coin_obj=suins_coin_obj.data[0], recipient=cex_public
                                 )
-                                transfer_balance = round(int(suins_coin_obj.data[0].balance) / 10 ** USDC_DENOMINATION,
-                                                         2)
+                                transfer_balance = round(
+                                    int(suins_coin_obj.data[0].balance) / 10 ** USDC_DENOMINATION, 2
+                                )
                                 logger.info(
                                     f'{index} | {short_address(address)} | suins_transfer | '
                                     f'{transfer_balance} $NS -> {cex_public} | {EXPLORER}/{result.digest}.'
                                 )
+
+                                time.sleep(random.randint(sleep_between_accs[0], sleep_between_accs[1]))
                                 suins_coin_obj = get_suins_obj(sui_config=sui_config)
                             else:
                                 break
 
-                time.sleep(random.randint(sleep_between_accs[0], sleep_between_accs[1]))
+
             except Exception as e:
                 logger.exception(e)
 
