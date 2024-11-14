@@ -3,7 +3,7 @@ import time
 
 from loguru import logger
 
-from data.constants import EXPLORER, SUINS_COIN_TYPE, USDC_DENOMINATION
+from data.constants import EXPLORER, SUINS_COIN_TYPE, USDC_DENOMINATION, VERSION
 from tools.add_logger import add_logger
 from tools.explorer import get_suins_airdrop_item
 from tools.other_utils import read_file, get_proxied_session, short_address
@@ -11,7 +11,7 @@ from tools.sui import get_sui_config, get_sui_balance, claim_suins, get_suins_ob
 from user_data.config import mobile_proxy, sleep_between_accs, shuffle_accs
 
 if __name__ == '__main__':
-    add_logger(version='v1.0')
+    add_logger(version=VERSION)
     try:
         mnemonics = read_file(path='user_data/mnemonic.txt')
         if shuffle_accs:
